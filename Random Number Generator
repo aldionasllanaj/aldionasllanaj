@@ -1,0 +1,120 @@
+/*
+* Program Name: Random Number Generator
+*
+* Description:  User application that will produce sets of random numbers
+*
+* Author: ALDION ASLLANAJ
+*
+* Date: 10/13/2024
+*/
+   
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//Functions
+int UserInput(); //Function to get user input for the number of sets
+int RandomNumber(int max, int min); //Function to generate a random number
+int isDuplicate(int arr[], int size, int num); //Function to check for duplicates in the array
+
+//main
+int main(void){
+    
+    
+   srand(time(0)); //Seed the random number generator 
+   
+   int qty = UserInput(); //Get the number of sets from the user
+   int numbers[6]; //Array to hold the random of numbers
+   int newNumber; //Varible to store the new random number 
+   
+   //While loop so the program quits if -1 is entered
+   while(qty > 0){
+      //For loop to generate the number of sets
+      for(int i = 0 ; i < qty; i++){
+        printf("Set # %2d of six numbers is: ",i+1); //Print the set number
+            //Loop to generate 6 random numbers for each set
+            for(int j = 0; j < 6;j++){
+                do{
+                    newNumber = RandomNumber(53,1); //Generate a random number
+                }while(isDuplicate(numbers, j , newNumber)); //Check for duplicates
+                    //Stores and Prints the generated number
+                numbers[j] =  newNumber;
+                printf("%2d ",numbers[j]);
+            }  
+        printf("\n");//Prints new line after the set
+      }
+    //Asks the user for input again
+    qty = UserInput();
+   }
+    //Thanks the user before exiting
+    printf("Thank you for using my application.Goodbye!");
+    return 0;
+}
+
+/*
+* Function Name: UserInput
+*
+* Input Parameters: None
+*
+* Description: Asks and Returns user input for the number of sets
+*
+* Return Value: Integer Type Number
+*/
+
+int UserInput(){
+   
+   int inputValue;//Variable to store the input
+   
+   //Prompt the user for input
+   printf("Enter in the number of randomly generated sets of numbers you want of enter or enter in -1 to quit.\n");
+   printf("Your Input: ");
+   scanf("%d",&inputValue);
+   return inputValue; //Return the user input
+   
+}  
+
+/*
+* Function Name: RandomNumber
+*
+* Input Parameters: 
+*             range: Integer Type Number
+*            offset: Integer Type Number
+*
+* Description: Generates and Returns a random number within the range
+*
+* Return Value: Integer Type Number
+*/
+
+int RandomNumber(int range,int offset){
+   
+   //Calculate the range and return a random number within the range
+   int finalRange = (range - offset) + 1;
+   return rand() % finalRange + offset;
+   
+}
+
+
+/*
+* Function Name: isDuplicate
+*
+* Input Parameters: 
+*             arr[]: Integer Type Array
+*              size: Integer Type Number
+*              num:  Integer Type Number
+*
+* Description: Returns 1 (true) if there is duplicate within the array, 0(false) otherwise
+*
+* Return Value: Integer Type Value
+*/
+
+int isDuplicate(int arr[], int size, int num){
+    //For loop to check for duplicates
+   for(int i = 0 ; i < size; i++){
+      if(arr[i] == num){
+         return 1; //return 1 if it is a duplicate
+      }
+   }
+   return 0; // Return 0 if there is no duplicate
+}
+   
+   
