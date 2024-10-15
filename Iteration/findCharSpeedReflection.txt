@@ -1,0 +1,3 @@
+1.My method is more efficient because when we counted the duration of them, it needed less nanoseconds.
+2.I think my method is more efficient because it is faster since it needed less nanoseconds to run.Also,it only executes once to run which tells us that it is faster and more efficient.
+3. It is really important for the program to be efficent because it can save a lot of money, it runs faster and uses less CPU usage on the computer, which allows us to use multiple programs at the same time.

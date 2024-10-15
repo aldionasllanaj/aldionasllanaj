@@ -1,0 +1,3 @@
+1.The While Loop duration was 4 Milliseconds and the For Loop duration was 12 Milliseconds.
+2.The While Loop code was faster because it needed 8 Milliseconds less to run than the for loop code.I believe it's the while loop because it is less complicated,too.
+3.Well, both codes are the same but the only difference is that one uses while loop and the other uses for loop.SO what accounts for the variability of the duration is the loop you use.If you use the while loop it is going to run faster.

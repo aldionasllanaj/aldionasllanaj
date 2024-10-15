@@ -1,0 +1,6 @@
+1.Row-Major order is obviously faster because it can tranverse through the array in 52 miliseconds while the Column - Major order needs 405 miliseconds.This happens because reading memory in contiguous locations is faster than jumping around among locations and different rows.
+
+
+2. I would usenRow-Major Order when you want to iterate through a 2D array by rows first and then columns , for example, when processing an image pixel-by-pixel.
+ I would use Column-Major Order when you need to traverse a 2D array by columns first and then rows.
+for example matrix multiplication.

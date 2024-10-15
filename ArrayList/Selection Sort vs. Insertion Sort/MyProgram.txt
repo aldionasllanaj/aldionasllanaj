@@ -1,0 +1,5 @@
+1.The run time between Insertion and Selection sort is really different on both arrays. On the reverse array the Selection Sort i faster by around 14492 nanoseconds. On the almost sorted array the Insertion Sort is faster by 1565 nanoseconds.This shows us that it's better using a Selection Sort on Reversed Arrays but a Insertion Sort on the Almost Sorted Arrays
+
+2.The same thing happens again but the difference run time between Insertion and Selection sort is a lot bigger on both arrays. On the reverse array the Selection Sort i faster by around 4985652 nanoseconds. On the almost sorted array the Insertion Sort is faster by 1756979 nanoseconds.This shows us that it's better using a Selection Sort on Reversed Arrays but a Insertion Sort on the Almost Sorted Arrays
+
+3. As i said  it's better using a Selection Sort on Reversed Arrays but a Insertion Sort on the Almost Sorted Arrays. For me I still prefer using the Selection Sort one because it seems more easier than he Insertion one.
