@@ -1,0 +1,74 @@
+/*
+* Program Name: EV versus Internal Combustion (ICE)
+*
+* Description: Calculate the total tonnage in CO2 emissions 
+* that vehicle T will produce over a lifespan of 150,000 
+* kilometers of ownership including the emissions from manufacture 
+* and all gasoline consumption
+*
+* Author: ALDION ASLLANAJ
+*
+* Date: 09/03/2024
+*/
+
+//Pre Processor
+#include <stdio.h>
+
+//Define constants
+#define LIFE_TIME 150000
+#define GRAMS_CO2_KWH 650.0
+
+//Main function
+int main(void){
+   
+   // Declare variables
+   double minEmission = 0;
+   double maxEmission = 0;
+   double batteryCapacity = 0;
+   double batteryRange = 0;
+   double minCO2 = 0;
+   double maxCO2 = 0;
+   double averageCO2 = 0;
+   double energyRequiredPerKm = 0;
+   double totalKWh = 0;
+   double totalEmission = 0;
+   
+   //Asking user for input
+   printf("Enter in data reflecting the kilograms of CO2\nproduced per kWh of battery capacity.\n");
+   printf("Minimum kg of CO2 per kWh: ");
+   scanf("%lf",&minEmission);
+   printf("Maximum kg of CO2 per kWh: ");
+   scanf("%lf",&maxEmission);
+   printf("Enter the capacity/size in kWh of the battery: ");
+   scanf("%lf",&batteryCapacity);
+   printf("Enter the range in km of the battery: ");
+   scanf("%lf",&batteryRange);
+   
+   //Compute the total tons of CO2 emitted by the battery manufacturer
+   minCO2 = (minEmission * batteryCapacity) / 1000.0; //kg to tons
+   maxCO2 = (maxEmission * batteryCapacity) / 1000.0; //kg to tons
+   averageCO2 = (minCO2 + maxCO2) / 2.0;
+   
+   //Print battery emissions
+   printf("\nComputing the emissions of CO2 making the battery in tons.\n");
+   printf("The minimum CO2 for the battery is: %.2lf tons.\n", minCO2);
+   printf("The maximum CO2 for the battery is: %.2lf tons.\n", maxCO2);
+   printf("The average CO2 for the battery is: %.2lf tons.\n", averageCO2);
+   
+   //Compute how many tons of CO2 will be produced over the 150,000 km lifespan
+   energyRequiredPerKm = batteryCapacity / batteryRange;
+   
+   //Compute the total kWh used over 150,000 km at 650 grams per kWh
+   totalKWh = energyRequiredPerKm * LIFE_TIME;
+   totalEmission = (totalKWh * GRAMS_CO2_KWH) / 1000000.0;//converting to tons
+   
+   //Display lifetime emissions
+   printf("\nComputing the emissions of CO2 for the lifetime of the EV in tons.\n");
+   printf("The total emissions to drive the EV %d km is: %.2lf tons.\n", LIFE_TIME, totalEmission );
+   
+   //The end
+   printf("\nThe End.\n");
+   
+   
+return 0;
+}//end main
