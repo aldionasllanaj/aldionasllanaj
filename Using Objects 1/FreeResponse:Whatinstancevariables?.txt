@@ -1,0 +1,10 @@
+What instance variables should the Pizza class have?
+A Pizza class shoudl have variables like : size, crust, sauce , extraCheese, toppings, meat
+
+What do the instance variables represent? What are the types of those instance variables?
+size - represents the pizza circlumference - int
+crust - represents type of crust - String
+sauce - represents the type of sauce - String
+extraCheese - represents if you want extra cheese or not - boolean
+toppings - represents the things that you can add inside the pizza - String
+meat - you want meat or not - boolean
